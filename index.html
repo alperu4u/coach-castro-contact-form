@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coach Castro Player Sign‑Up</title>
+    <!-- Google fonts for modern typography -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome icons for intuitive form fields -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-d15bkwk9/1+sL8jE+2P95nH1ta2Qfi9KcQiw94usAEkexVFwV7+oB5Miz7X4k4JQhLreQJhDIdbHkd13UgPSgA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- Club logo -->
+      <img src="logo.png" alt="Coach Castro logo" class="logo" />
+    </header>
+    <main>
+      <section class="form-section">
+        <h1>Player Sign‑Up</h1>
+        <p class="subtitle">
+          Complete the form below to register a new player. Fields marked with an
+          asterisk (*) are required.
+        </p>
+        <!-- Progress bar to show completion status -->
+        <div class="progress-bar">
+          <div class="progress"></div>
+        </div>
+        <!-- Contact / player sign‑up form -->
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name *</label>
+            <div class="input-icon">
+              <i class="fas fa-user"></i>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Full name"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <div class="input-icon">
+              <i class="fas fa-envelope"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number *</label>
+            <div class="input-icon">
+              <i class="fas fa-phone"></i>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="e.g. (555) 123‑4567"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="age">Player age *</label>
+            <div class="input-icon">
+              <i class="fas fa-child"></i>
+              <input
+                type="number"
+                id="age"
+                name="age"
+                placeholder="Age"
+                min="3"
+                max="50"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="level">Soccer level *</label>
+            <div class="input-icon select-icon">
+              <i class="fas fa-futbol"></i>
+              <select id="level" name="level" required>
+                <option value="" disabled selected>Select a level</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="details">Additional details</label>
+            <div class="input-icon textarea-icon">
+              <i class="fas fa-comment-alt"></i>
+              <textarea
+                id="details"
+                name="details"
+                rows="4"
+                placeholder="Tell us a bit more about the player’s experience, goals or questions..."
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Simple math captcha -->
+          <div class="form-group captcha-group">
+            <label id="captchaQuestion" for="captchaAnswer">Captcha *</label>
+            <div class="captcha-wrapper input-icon">
+              <i class="fas fa-shield-alt"></i>
+              <span id="captchaEquation"></span>
+              <input
+                type="text"
+                id="captchaAnswer"
+                name="captcha"
+                placeholder="Answer"
+                required
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit</button>
+        </form>
+        <!-- Message shown after validation -->
+        <p id="message" class="message"></p>
+      </section>
+    </main>
+    <footer>
+      <p>© <span id="year"></span> Coach Castro. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+  </body>
+</html>
